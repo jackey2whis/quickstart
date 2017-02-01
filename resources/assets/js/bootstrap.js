@@ -8,11 +8,7 @@ window._ = require('lodash');
  */
 
 window.$ = window.jQuery = require('jquery');
-require('bootstrap-less');
-
-require('admin-lte');
-window.toastr = require('toastr');
-require('icheck');
+require('bootstrap-sass');
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -32,7 +28,7 @@ require('vue-resource');
 Vue.http.interceptors.push((request, next) => {
     request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
 
-next();
+    next();
 });
 
 /**
